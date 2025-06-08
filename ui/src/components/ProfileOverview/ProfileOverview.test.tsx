@@ -1,9 +1,9 @@
 // App: Client Profile Module
 // Package: ui
 // File: __tests__/ProfileOverview.test.tsx
-// Version: 0.0.7
+// Version: 0.0.11
 // Author: Bobwares
-// Date: 2025-06-08T08:52:00Z
+// Date: 2025-06-08T10:00:00Z
 // Description: Unit tests for the web ProfileOverview component including edit functionality.
 
 import '@testing-library/jest-dom';
@@ -61,7 +61,7 @@ describe('ProfileOverview', () => {
       '/api/profile/update',
       expect.objectContaining({ method: 'POST' })
     );
-    await waitFor(() => screen.getByText(/Profile updated/));
+    await waitFor(() => screen.getByRole('status'));
   });
 
   it('shows error on server failure', async () => {

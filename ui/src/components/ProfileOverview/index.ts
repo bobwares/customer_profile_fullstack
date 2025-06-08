@@ -11,3 +11,4 @@
 
 export { ProfileOverview } from './ProfileOverview';
 export type { Profile } from './ProfileOverview';
+export { EditProfileForm } from './EditProfileForm';
