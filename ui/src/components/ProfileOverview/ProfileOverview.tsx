@@ -30,23 +30,35 @@ export const ProfileOverview: FC<ProfileOverviewProps> = ({ onEdit }) => {
   const [error, setError] = useState<string | null>(null);
   const [editing, setEditing] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    const controller = new AbortController();
-    const load = async () => {
-      try {
-        const res = await fetch('/api/profile/get', { signal: controller.signal });
-        if (!res.ok) throw new Error('Network response was not ok');
-        const data: Profile = await res.json();
-        setProfile(data);
-      } catch (err) {
-        if (!(err instanceof DOMException && err.name === 'AbortError')) {
-          setError('Failed to load profile');
+    const url = 'http://localhost:3001/profile';
+    console.log('[ProfileOverview] fetching →', url);
+
+    fetch(url, { headers: { Accept: 'application/json' } })
+      .then(async (res) => {
+        console.log('[ProfileOverview] response status →', res.status);
+        if (!res.ok) {
+          const text = await res.text();
+          console.error('[ProfileOverview] response body →', text);
+          throw new Error(`Server responded ${res.status}`);
         }
-      }
-    };
-    load();
-    return () => controller.abort();
+        return res.json();
+      })
+      .then((data: Profile[]) => {
+        console.log('[ProfileOverview] data →', data);
+        if (!data.length) {
+          setError('No profiles found');
+        } else {
+          setProfile(data[0]);
+        }
+      })
+      .catch((err: Error) => {
+        console.error('[ProfileOverview] fetch error →', err);
+        setError(`Failed to load profile: ${err.message}`);
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   const startEdit = () => {
