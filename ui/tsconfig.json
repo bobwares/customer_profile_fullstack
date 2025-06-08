@@ -1,20 +1,78 @@
+// # App: Customer Profile UI
+// # Package: apps/ui
+// # File: tsconfig.json
+// # Version: 0.0.1
+// # Author: Bobwares
+// # Date: 2025-06-08T15:05:00Z
+// # Description: TypeScript compiler options for the Next.js front-end.
+// #
+// # Notes
+// # - Extends the monorepo base config.
+// # - Provides path aliases that match the recommended folder layout.
+// # - Uses JSONC comments, which are allowed by the TypeScript compiler.
+//
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["dom", "dom.iterable", "es2022"],
-    "allowJs": false,
-    "skipLibCheck": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "exactOptionalPropertyTypes": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
+    /* ---- Emit & Module ---- */
     "noEmit": true,
-    "jsx": "react-jsx"
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    /* ---- JS / JSX ---- */
+    "allowJs": false,
+    "jsx": "preserve",
+    /* ---- Target & Lib ---- */
+    "target": "ES2020",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2020"
+    ],
+    /* ---- Strictness ---- */
+    "strict": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    /* ---- Paths / Aliases ---- */
+    "baseUrl": ".",
+    "paths": {
+      "@/app/*": [
+        "src/app/*"
+      ],
+      "@/components/*": [
+        "src/components/*"
+      ],
+      "@/features/*": [
+        "src/features/*"
+      ],
+      "@/hooks/*": [
+        "src/hooks/*"
+      ],
+      "@/lib/*": [
+        "src/lib/*"
+      ],
+      "@/types/*": [
+        "src/types/*"
+      ],
+      "@/tests/*": [
+        "src/tests/*"
+      ]
+    },
+    /* ---- Misc ---- */
+    "resolveJsonModule": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "src/**/*"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

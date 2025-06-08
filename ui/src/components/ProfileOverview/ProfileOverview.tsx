@@ -6,8 +6,11 @@
 // Date: 2025-06-08T08:52:00Z
 // Description: React component to display and edit a user's profile information with API integration.
 
+"use client";
+
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export interface Profile {
   fullName: string;
@@ -104,7 +107,8 @@ export const ProfileOverview: FC<ProfileOverviewProps> = ({ onEdit }) => {
 
   return (
     <div className="max-w-md mx-auto p-4 border rounded shadow">
-      <img src={profile.photoUrl} alt="Profile" className="w-32 h-32 rounded-full mx-auto" />
+      <Image src={profile.photoUrl} alt="Profile" width={128} height={128} className="rounded-full mx-auto" />
+
       {editing ? (
         <form
           onSubmit={(e) => {
