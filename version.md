@@ -38,3 +38,7 @@
 
 ## 0.0.10 - 2025-06-08 09:53:18 UTC (work)
 - add Next.js app router structure with globals.css, layout.tsx, page.module.css, page.tsx
+
+## 0.0.11 - 2025-06-08 18:57:53 UTC (work)
+- implement EditProfileForm component and integrate with ProfileOverview
+- add NestJS profile API with update endpoint and integration tests
