@@ -30,5 +30,7 @@ Project Setup: Client Profile Module — Initialize the repository and folder la
 
 4. Configure linting and formatting for the ui and api modules using **ESLint** and **Prettier**.
 
-5. Commit message: `Task: Initialize Project Structure & Configuration`.
+5. Create Makefile for `build`, `start`, `test`.
+
+6. Commit message: `Task: Initialize Project Structure & Configuration`.
 
