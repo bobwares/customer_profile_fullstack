@@ -38,3 +38,7 @@
 
 ## 0.0.10 - 2025-06-08 09:53:18 UTC (work)
 - add Next.js app router structure with globals.css, layout.tsx, page.module.css, page.tsx
+
+## 0.0.11 - 2025-06-08 10:27:04 UTC (work)
+- add root Makefile with install, build, start, test commands
+- fix Next.js build error by marking components as client
