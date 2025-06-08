@@ -19,3 +19,7 @@
 ## 0.0.5 - 2025-06-08 07:59:52 UTC (work)
 - implement ProfileOverview components for web and mobile with tests
 - add new mobile package configuration
+
+## 0.0.6 - 2025-06-08 08:46:08 UTC (work)
+- add metadata headers to config and test files
+- update version numbers in profile components

@@ -1,5 +1,13 @@
+// App: Client Profile Module
+// Package: mobile
+// File: __tests__/ProfileOverview.test.tsx
+// Version: 0.0.6
+// Author: Bobwares
+// Date: 2025-06-08T08:45:29Z
+// Description: Unit tests for the mobile ProfileOverview component.
+
 import { render, waitFor } from '@testing-library/react-native';
-import { ProfileOverview, Profile } from '../ProfileOverview';
+import { ProfileOverview, type Profile } from '../ProfileOverview';
 
 const profile: Profile = {
   fullName: 'Jane Doe',

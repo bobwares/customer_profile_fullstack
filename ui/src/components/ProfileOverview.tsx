@@ -1,9 +1,9 @@
 // App: Client Profile Module
 // Package: ui
 // File: ProfileOverview.tsx
-// Version: 0.0.5
+// Version: 0.0.6
 // Author: Bobwares
-// Date: 2025-06-08T00:00:00Z
+// Date: 2025-06-08T08:45:29Z
 // Description: React component to display a user's profile information in a card with an edit button.
 
 import type { FC } from 'react';
