@@ -7,3 +7,8 @@
 - add tsconfig for ui and api
 - create src directories with unit test folders
 - add e2e test directory for Playwright
+
+## 0.0.3 - 2025-06-08 07:33:36 UTC (work)
+- move jest.config into ui/ and api/ packages
+- add dependencies and devDependencies for testing and linting
+- generated package-lock in ui
