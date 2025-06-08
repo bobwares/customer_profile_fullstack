@@ -4,11 +4,11 @@ Application Name: Client Profile Module
 
 ### Product Design Document
 
-READ PRD.md
+REQUIRED READ PRD.md
 
 ### Domain Driven Design Document
 
-READ domain_driven_design_document.md
+REQUIRED READ domain_driven_design_document.md
    
 ### Versioning
 
@@ -19,7 +19,7 @@ READ domain_driven_design_document.md
 
 ### Coding Rules
 
-Read coding_rules.md
+REQUIRED READ coding_rules.md
 
 ### **Full-Stack Technology Stack (NestJS + Next.js)**
 
