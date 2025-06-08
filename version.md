@@ -12,3 +12,6 @@
 - move jest.config into ui/ and api/ packages
 - add dependencies and devDependencies for testing and linting
 - generated package-lock in ui
+
+## 0.0.4 - 2025-06-08 07:40:38 UTC (work)
+- update initialization task instructions with test directories and configuration details
