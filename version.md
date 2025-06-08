@@ -27,3 +27,6 @@
 ## 0.0.7 - 2025-06-08 08:52:10 UTC (work)
 - add edit form with validation and API integration in ProfileOverview
 - add success and error handling with unit tests for web and mobile
+
+## 0.0.8 - 2025-06-08 09:02:15 UTC (work)
+- add Makefiles for build, start, test for ui, mobile, and api packages
