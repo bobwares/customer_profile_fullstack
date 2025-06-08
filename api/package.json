@@ -1,0 +1,9 @@
+{
+  "name": "client-profile-api",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start",
+    "test": "jest"
+  }
+}
