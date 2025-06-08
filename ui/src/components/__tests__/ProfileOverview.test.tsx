@@ -1,10 +1,10 @@
 // App: Client Profile Module
 // Package: ui
 // File: __tests__/ProfileOverview.test.tsx
-// Version: 0.0.6
+// Version: 0.0.7
 // Author: Bobwares
-// Date: 2025-06-08T08:45:29Z
-// Description: Unit tests for the web ProfileOverview component.
+// Date: 2025-06-08T08:52:00Z
+// Description: Unit tests for the web ProfileOverview component including edit functionality.
 
 import '@testing-library/jest-dom';
 import { render, screen, waitFor } from '@testing-library/react';
@@ -43,5 +43,39 @@ describe('ProfileOverview', () => {
     await waitFor(() => screen.getByText(/John Doe/));
     await userEvent.click(screen.getByRole('button', { name: /edit profile/i }));
     expect(onEdit).toHaveBeenCalled();
+  });
+
+  it('saves changes successfully', async () => {
+    const fetchMock = jest.fn()
+      .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve(profile) })
+      .mockResolvedValueOnce({ ok: true });
+    global.fetch = fetchMock as unknown as typeof fetch;
+
+    render(<ProfileOverview onEdit={jest.fn()} />);
+    await waitFor(() => screen.getByText(/John Doe/));
+    await userEvent.click(screen.getByRole('button', { name: /edit profile/i }));
+    await userEvent.type(screen.getAllByRole('textbox')[0], ' Jr.');
+    await userEvent.click(screen.getByRole('button', { name: /save/i }));
+
+    expect(fetchMock).toHaveBeenLastCalledWith(
+      '/api/profile/update',
+      expect.objectContaining({ method: 'POST' })
+    );
+    await waitFor(() => screen.getByText(/Profile updated/));
+  });
+
+  it('shows error on server failure', async () => {
+    const fetchMock = jest.fn()
+      .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve(profile) })
+      .mockResolvedValueOnce({ ok: false });
+    global.fetch = fetchMock as unknown as typeof fetch;
+
+    render(<ProfileOverview onEdit={jest.fn()} />);
+    await waitFor(() => screen.getByText(/John Doe/));
+    await userEvent.click(screen.getByRole('button', { name: /edit profile/i }));
+    await userEvent.click(screen.getByRole('button', { name: /save/i }));
+
+    await waitFor(() => screen.getByRole('alert'));
+    expect(screen.getByRole('alert')).toHaveTextContent(/Failed to save/);
   });
 });

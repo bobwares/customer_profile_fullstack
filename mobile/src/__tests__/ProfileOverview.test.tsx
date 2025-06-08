@@ -1,12 +1,12 @@
 // App: Client Profile Module
 // Package: mobile
 // File: __tests__/ProfileOverview.test.tsx
-// Version: 0.0.6
+// Version: 0.0.7
 // Author: Bobwares
-// Date: 2025-06-08T08:45:29Z
-// Description: Unit tests for the mobile ProfileOverview component.
+// Date: 2025-06-08T08:52:00Z
+// Description: Unit tests for the mobile ProfileOverview component including edit functionality.
 
-import { render, waitFor } from '@testing-library/react-native';
+import { render, waitFor, fireEvent } from '@testing-library/react-native';
 import { ProfileOverview, type Profile } from '../ProfileOverview';
 
 const profile: Profile = {
@@ -32,5 +32,41 @@ describe('ProfileOverview (mobile)', () => {
     const { getByText } = render(<ProfileOverview onEdit={jest.fn()} />);
     await waitFor(() => getByText(/Jane Doe/));
     expect(getByText(/jane@example.com/)).toBeTruthy();
+  });
+
+  it('saves edits successfully', async () => {
+    const fetchMock = jest.fn()
+      .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve(profile) })
+      .mockResolvedValueOnce({ ok: true });
+    global.fetch = fetchMock as unknown as typeof fetch;
+
+    const { getByText, getAllByDisplayValue } = render(
+      <ProfileOverview onEdit={jest.fn()} />
+    );
+    await waitFor(() => getByText(/Jane Doe/));
+    fireEvent.press(getByText(/edit profile/i));
+    const inputs = getAllByDisplayValue(/Doe/);
+    fireEvent.changeText(inputs[0], 'Jane Smith');
+    fireEvent.press(getByText(/save/i));
+
+    expect(fetchMock).toHaveBeenLastCalledWith(
+      '/api/profile/update',
+      expect.objectContaining({ method: 'POST' })
+    );
+    await waitFor(() => getByText(/Profile updated/));
+  });
+
+  it('shows error when server fails', async () => {
+    const fetchMock = jest.fn()
+      .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve(profile) })
+      .mockResolvedValueOnce({ ok: false });
+    global.fetch = fetchMock as unknown as typeof fetch;
+
+    const { getByText } = render(<ProfileOverview onEdit={jest.fn()} />);
+    await waitFor(() => getByText(/Jane Doe/));
+    fireEvent.press(getByText(/edit profile/i));
+    fireEvent.press(getByText(/save/i));
+
+    await waitFor(() => getByText(/Failed to save/));
   });
 });

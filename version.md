@@ -23,3 +23,7 @@
 ## 0.0.6 - 2025-06-08 08:46:08 UTC (work)
 - add metadata headers to config and test files
 - update version numbers in profile components
+
+## 0.0.7 - 2025-06-08 08:52:10 UTC (work)
+- add edit form with validation and API integration in ProfileOverview
+- add success and error handling with unit tests for web and mobile
