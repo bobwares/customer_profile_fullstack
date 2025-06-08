@@ -1,0 +1,10 @@
+FROM postgres:15-alpine
+
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=postgres
+ENV POSTGRES_DB=client_profile
+
+EXPOSE 5432
+
+# Use a volume for data persistence
+VOLUME ["/var/lib/postgresql/data"]
