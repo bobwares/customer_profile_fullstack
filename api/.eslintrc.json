@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "@nestjs/eslint-plugin/recommended",
+    "prettier"
+  ]
+}
