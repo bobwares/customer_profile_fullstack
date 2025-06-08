@@ -15,12 +15,12 @@ import type { Profile } from './types';
 export class ProfileController {
   constructor(private readonly service: ProfileService) {}
 
-  @Get('get')
+  @Get()
   get(): Profile {
     return this.service.getProfile();
   }
 
-  @Post('update')
+  @Post()
   update(@Body() dto: UpdateProfileDto): Profile {
     return this.service.updateProfile(dto);
   }

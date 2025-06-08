@@ -1,0 +1,58 @@
+###
+# Get all profiles
+GET http://localhost:3001/profile
+Accept: application/json
+
+###
+
+# Create a new profile
+POST http://localhost:3001/profile
+Content-Type: application/json
+
+{
+  "firstName": "Alice",
+  "lastName": "Smith",
+  "email": "alice.smith@example.com",
+  "phone": "5551234",
+  "address": "123 Main St, Anytown"
+}
+
+###
+
+# Get a single profile by ID
+# Replace {{id}} with an actual UUID or numeric ID from your DB
+GET http://localhost:3001/profile/{{id}}
+Accept: application/json
+
+###
+
+# Update a profile (PATCH)
+# Replace {{id}} with the ID of the profile you just created
+PATCH http://localhost:3001/profile/{{id}}
+Content-Type: application/json
+
+{
+  "phone": "555-5678",
+  "address": "456 Oak Ave, Othertown"
+}
+
+###
+
+# Replace a profile (PUT)
+# Replace {{id}} as above
+PUT http://localhost:3001/profile/{{id}}
+Content-Type: application/json
+
+{
+  "firstName": "Alice",
+  "lastName": "Johnson",
+  "email": "alice.johnson@example.com",
+  "phone": "555-9012",
+  "address": "789 Pine Rd, Newcity"
+}
+
+###
+
+# Delete a profile
+# Replace {{id}} as above
+DELETE http://localhost:3001/profile/{{id}}

@@ -7,9 +7,6 @@
 // Description: DTO with validation rules for updating profile fields.
 
 import { IsEmail, IsOptional, IsString, Matches } from 'class-validator';
-import type { Profile } from '../types';
-
-type Keys = keyof Profile;
 
 export class UpdateProfileDto {
   @IsOptional()
