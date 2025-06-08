@@ -38,3 +38,13 @@
 
 ## 0.0.10 - 2025-06-08 09:53:18 UTC (work)
 - add Next.js app router structure with globals.css, layout.tsx, page.module.css, page.tsx
+
+## 0.0.11 - 2025-06-08 10:27:04 UTC (work)
+- add root Makefile with install, build, start, test commands
+- fix Next.js build error by marking components as client
+## 0.0.12 - 2025-06-08 10:48:40 UTC (work)
+- fix mobile install with legacy peer deps
+- update mobile package.json with dummy build/start
+- remove non-existent @nestjs/eslint-plugin
+- ensure make build succeeds
+

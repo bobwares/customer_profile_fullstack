@@ -1,10 +1,12 @@
 // App: Client Profile Module
 // Package: ui
 // File: ProfileOverview.tsx
-// Version: 0.0.7
+// Version: 0.0.11
 // Author: Bobwares
-// Date: 2025-06-08T08:52:00Z
+// Date: 2025-06-08T10:30:00Z
 // Description: React component to display and edit a user's profile information with API integration.
+
+'use client';
 
 import type { FC } from 'react';
 import { useEffect, useState } from 'react';
