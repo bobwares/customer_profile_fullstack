@@ -8,20 +8,19 @@ Project Setup: Client Profile Module — Initialize the repository and folder la
 
 1. Create the following directories at project root:
 
-- `ui/` - Next.js frontend application.
+- `schema/` - JSON schema files defining domain objects for the application.
+- `ui/`  - Next.js frontend application.
 - `api/` - NestJS backend API.
-- `schema/` - SQL and JSON files defining the database schema.
-- `Dockerfile.postgres` - PostgreSQL image for local testing.
-- `version.md` - Project changelog.
+- `db/`  - Database configuration
+- `db/Dockerfile.postgres` - PostgreSQL image for local testing.
+- `./version.md` - Project changelog.
 
 2. Add README.md to ui/ and api/ directories.
 
 3. Initialize language-specific setup:
    -  For JavaScript/TypeScript: `package.json` with scripts `build`, `start`, `test`
       
-4. Configure linting and formatting:
+4. Configure linting and formatting for the ui and api modules.
     
-  - ESLint + Prettier for web & mobile code
-
-5. Commit the initial structure with a meaningful commit message.
+5. Commit message: Task: Initialize Project Structure & Configuration.
 
