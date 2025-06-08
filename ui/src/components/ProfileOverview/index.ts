@@ -7,5 +7,7 @@
 // # Description: Barrel export for the ProfileOverview component and its public types.
 //
 
+"use client"
+
 export { ProfileOverview } from './ProfileOverview';
 export type { Profile } from './ProfileOverview';

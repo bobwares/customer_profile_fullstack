@@ -6,6 +6,8 @@
 // Date: 2025-06-08T09:53:00Z
 // Description: Root layout for the Next.js application.
 //
+
+
 import type { Metadata } from 'next';
 import './globals.css';
 
