@@ -35,3 +35,6 @@
 - add install target to Makefiles and fix indentation
 - create pages/index.tsx for Next.js build
 - update Jest config for TSX transform
+
+## 0.0.10 - 2025-06-08 09:53:18 UTC (work)
+- add Next.js app router structure with globals.css, layout.tsx, page.module.css, page.tsx
