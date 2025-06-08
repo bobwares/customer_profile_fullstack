@@ -15,3 +15,7 @@
 
 ## 0.0.4 - 2025-06-08 07:40:38 UTC (work)
 - update initialization task instructions with test directories and configuration details
+
+## 0.0.5 - 2025-06-08 07:59:52 UTC (work)
+- implement ProfileOverview components for web and mobile with tests
+- add new mobile package configuration
