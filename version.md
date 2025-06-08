@@ -30,3 +30,8 @@
 
 ## 0.0.8 - 2025-06-08 09:02:15 UTC (work)
 - add Makefiles for build, start, test for ui, mobile, and api packages
+
+## 0.0.9 - 2025-06-08 09:24:09 UTC (work)
+- add install target to Makefiles and fix indentation
+- create pages/index.tsx for Next.js build
+- update Jest config for TSX transform
