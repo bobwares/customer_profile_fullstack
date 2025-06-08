@@ -1,0 +1,2 @@
+# Python dependencies for domain/application layers
+flask

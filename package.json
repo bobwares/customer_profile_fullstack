@@ -1,0 +1,9 @@
+{
+  "name": "client-profile-module",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "echo 'building...'",
+    "start": "echo 'starting...'",
+    "test": "echo 'testing...'"
+  }
+}
