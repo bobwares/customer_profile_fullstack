@@ -50,3 +50,5 @@ REQUIRED READ coding_rules.md
 * Jest + React Testing Library for component-level testing.
 * ESLint + Prettier for linting and consistent code formatting.
 * Webpack (default) or Vite (with plugin) for optimized builds.
+
+EOF

@@ -119,3 +119,5 @@
 * Maintain Architecture Decision Records under `/docs/adr/####-title.md`.
 
 * Update `version.md` on each merge to `main`.
+
+EOF

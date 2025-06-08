@@ -194,3 +194,5 @@ These orchestrate interactions between the UI, domain model, and domain services
 ## 10. Summary
 
 This DDD document defines a clear **bounded context** for the Client Profile module, with a well-scoped **aggregate** (`ClientProfile`), **value objects**, **domain services**, **events**, **repositories**, and **application services**. It also maps out integration points and context relationships. Engineers can now use this model to drive both human-written code and AI-assisted code generation, ensuring that implementations faithfully reflect the domain’s invariants and behaviors.
+
+EOF
