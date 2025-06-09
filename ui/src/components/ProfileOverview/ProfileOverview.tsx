@@ -40,7 +40,11 @@ export const ProfileOverview: FC<ProfileOverviewProps> = ({ onEdit }) => {
         const res = await fetch(url, { signal: controller.signal });
         if (!res.ok) throw new Error('Network response was not ok');
         const data: Profile = await res.json();
-        setProfile(data);
+        if (data.length > 0) {
+          setProfile(data[0]);
+        } else {
+          setError('No profiles found');
+        }
       } catch (err) {
         if (!(err instanceof DOMException && err.name === 'AbortError')) {
           setError('Failed to load profile');
