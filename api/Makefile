@@ -1,14 +1,14 @@
 # App: Client Profile Module
 # Package: api
 # File: Makefile
-# Version: 0.0.9
+# Version: 0.0.15
 # Author: Bobwares
-# Date: 2025-06-08T09:30:00Z
+# Date: 2025-06-09T02:59:45Z
 # Description: Task shortcuts for building, starting, testing, and installing the NestJS API.
 
 SHELL := /usr/bin/env bash
 
-.PHONY: all build format start start-dev start-debug start-prod lint test test-watch test-cov test-debug test-e2e clean
+.PHONY: install all build format start start-dev start-debug start-prod lint test test-watch test-cov test-debug test-e2e clean
 
 # Default target
 all: build
@@ -42,7 +42,7 @@ lint:
 	npm run lint
 
 # Run Jest tests once
-test:
+test: install
 	npm run test
 
 # Run Jest in watch mode
@@ -64,3 +64,6 @@ test-e2e:
 # Remove build artifacts
 clean:
 	rm -rf dist
+
+install:
+	npm install --legacy-peer-deps

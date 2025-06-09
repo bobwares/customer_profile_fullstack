@@ -49,3 +49,11 @@
 
 ## 0.0.13 - 2025-06-09 00:43:33 UTC (work)
 - configure Tailwind CSS with globals and config files
+
+## 0.0.14 - 2025-06-09 02:56:13 UTC (work)
+- add dev dependencies for Jest and Testing Library in UI
+- fix supertest import in API tests
+
+## 0.0.15 - 2025-06-09 02:59:45 UTC (work)
+- run npm install before tests in Makefiles to ensure Jest is available
+- update Makefile metadata headers
