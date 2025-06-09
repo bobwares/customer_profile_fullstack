@@ -1,7 +1,7 @@
 # Task: Define Domain Model Classes & Validation Logic
 
 **Prompt:**
-DDD: ClientProfileContext — Implement the `ClientProfile` aggregate in TypeScript (or Python) with:
+DDD: ClientProfileContext — Implement the `ClientProfile` aggregate in TypeScript with:
 - Value objects `EmailAddress`, `PhoneNumber`, `ProfilePhoto`, `PrivacySettings`, each enforcing PRD invariants.
 - Methods `updatePersonalInfo()`, `uploadPhoto()`, `togglePrivacyOption()`.
 
