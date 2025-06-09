@@ -42,3 +42,7 @@
 ## 0.0.11 - 2025-06-08 18:57:53 UTC (work)
 - implement EditProfileForm component and integrate with ProfileOverview
 - add NestJS profile API with update endpoint and integration tests
+
+## 0.0.12 - 2025-06-09 00:15:57 UTC (work)
+- implement GET /profile endpoint returning array of Profile
+- fetch profiles in UI using base URL env variable

@@ -1,7 +1,7 @@
 // App: Client Profile Module
 // Package: api
 // File: profile.controller.ts
-// Version: 0.0.11
+// Version: 0.0.12
 // Author: Bobwares
 // Date: 2025-06-08T10:00:00Z
 // Description: HTTP controller providing profile endpoints.
@@ -16,8 +16,8 @@ export class ProfileController {
   constructor(private readonly service: ProfileService) {}
 
   @Get()
-  get(): Profile {
-    return this.service.getProfile();
+  findAll(): Promise<Profile[]> {
+    return this.service.findAll();
   }
 
   @Post()
