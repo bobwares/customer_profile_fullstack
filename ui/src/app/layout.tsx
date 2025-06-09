@@ -1,9 +1,9 @@
 // App: Client Profile Module
 // Package: ui
 // File: src/app/layout.tsx
-// Version: 0.0.10
+// Version: 0.0.13
 // Author: Bobwares
-// Date: 2025-06-08T09:53:00Z
+// Date: 2025-06-09T00:42:26Z
 // Description: Root layout for the Next.js application.
 //
 

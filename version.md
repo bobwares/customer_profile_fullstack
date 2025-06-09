@@ -46,3 +46,6 @@
 ## 0.0.12 - 2025-06-09 00:15:57 UTC (work)
 - implement GET /profile endpoint returning array of Profile
 - fetch profiles in UI using base URL env variable
+
+## 0.0.13 - 2025-06-09 00:43:33 UTC (work)
+- configure Tailwind CSS with globals and config files
