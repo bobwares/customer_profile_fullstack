@@ -1,0 +1,13 @@
+// # App: Client Profile Module
+// # Package: ui
+// # File: tsconfig.test.json
+// # Version: 0.0.15
+// # Author: Bobwares
+// # Date: 2025-06-09T02:59:45Z
+// # Description: TypeScript config for Jest unit tests, enabling JSX transpilation.
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  }
+}

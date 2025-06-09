@@ -4,9 +4,9 @@
 // App: Client Profile Module
 // Package: ui
 // File: jest.config.js
-// Version: 0.0.9
+// Version: 0.0.15
 // Author: Bobwares
-// Date: 2025-06-08T09:30:00Z
+// Date: 2025-06-09T02:59:45Z
 // Description: Jest configuration for Next.js unit tests with TSX transform.
 
 module.exports = {
@@ -16,6 +16,6 @@ module.exports = {
   testMatch: ['**/__tests__/**/*.test.ts?(x)', '**/?(*.)+(spec|test).ts?(x)'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   transform: {
-    '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: 'tsconfig.json' }]
+    '^.+\\.(ts|tsx)$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }]
   }
 };
