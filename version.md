@@ -49,3 +49,11 @@
 
 ## 0.0.13 - 2025-06-09 00:43:33 UTC (work)
 - configure Tailwind CSS with globals and config files
+
+## 0.0.14 - 2025-06-09 00:52:02 UTC (work)
+- add Jest devDependencies and install packages
+
+## 0.0.15 - 2025-06-09 02:25:00 UTC (work)
+- fix Jest transform to handle TSX by using dedicated tsconfig
+- install React Testing Library packages
+- tests now pass

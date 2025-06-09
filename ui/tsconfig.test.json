@@ -1,0 +1,13 @@
+// App: Client Profile Module
+// Package: ui
+// File: tsconfig.test.json
+// Version: 0.0.2
+// Author: Bobwares
+// Date: 2025-06-09T02:20:00Z
+// Description: Overrides for Jest testing to transform JSX.
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  }
+}
