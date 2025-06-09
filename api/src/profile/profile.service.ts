@@ -1,7 +1,7 @@
 // App: Client Profile Module
 // Package: api
 // File: profile.service.ts
-// Version: 0.0.11
+// Version: 0.0.12
 // Author: Bobwares
 // Date: 2025-06-08T10:00:00Z
 // Description: Service handling profile retrieval and updates.
@@ -18,6 +18,10 @@ export class ProfileService {
     address: '123 Street',
     photoUrl: '/photo.jpg'
   };
+
+  async findAll(): Promise<Profile[]> {
+    return [this.profile];
+  }
 
   getProfile(): Profile {
     return this.profile;

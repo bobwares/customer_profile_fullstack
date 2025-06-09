@@ -1,7 +1,7 @@
 // App: Client Profile Module
 // Package: ui
 // File: ProfileOverview.tsx
-// Version: 0.0.11
+// Version: 0.0.12
 // Author: Bobwares
 // Date: 2025-06-08T10:00:00Z
 // Description: React component to display and edit a user's profile information with API integration.
@@ -30,12 +30,14 @@ export const ProfileOverview: FC<ProfileOverviewProps> = ({ onEdit }) => {
   const [error, setError] = useState<string | null>(null);
   const [editing, setEditing] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+  const url = `${baseUrl}/profile`;
 
   useEffect(() => {
     const controller = new AbortController();
     const load = async () => {
       try {
-        const res = await fetch('/api/profile/get', { signal: controller.signal });
+        const res = await fetch(url, { signal: controller.signal });
         if (!res.ok) throw new Error('Network response was not ok');
         const data: Profile = await res.json();
         setProfile(data);
@@ -47,7 +49,7 @@ export const ProfileOverview: FC<ProfileOverviewProps> = ({ onEdit }) => {
     };
     load();
     return () => controller.abort();
-  }, []);
+  }, [url]);
 
   const startEdit = () => {
     if (profile) {
