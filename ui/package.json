@@ -2,7 +2,7 @@
   "name": "ui",
   "version": "0.0.1",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "test": "jest"
